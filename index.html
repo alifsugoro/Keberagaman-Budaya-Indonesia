@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keberagaman Budaya Indonesia</title>
+    
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+    <style>
+        body { 
+            font-family: 'Alegreya Sans', sans-serif; 
+            background-color: #fafaf9;
+        }
+        .heading-font { 
+            font-family: 'Playfair Display', serif; 
+        }
+        
+        /* 3D Card Flip Animations */
+        .card-wrapper { 
+            perspective: 1000px; 
+            cursor: pointer;
+        }
+        .card-inner { 
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); 
+            transform-style: preserve-3d; 
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 1rem;
+        }
+        .card-wrapper:hover .card-inner, 
+        .card-wrapper.is-flipped .card-inner,
+        .card-wrapper:focus .card-inner { 
+            transform: rotateY(180deg); 
+        }
+        .card-front, .card-back { 
+            -webkit-backface-visibility: hidden; /* Safari support */
+            backface-visibility: hidden; 
+            position: absolute; 
+            inset: 0; 
+            border-radius: 1rem; 
+            overflow: hidden; 
+        }
+        .card-back { 
+            transform: rotateY(180deg); 
+        }
+        
+        /* Fade Up Animation */
+        @keyframes fadeUp { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-card { 
+            animation: fadeUp 0.6s ease forwards; 
+            opacity: 0; 
+        }
+    </style>
+</head>
+<body class="w-full min-h-screen text-gray-800">
+
+    <header class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+        <img src="https://raw.githubusercontent.com/alifsugoro/Keberagaman-Budaya-Indonesia/refs/heads/main/images%20(7).jpg" 
+             alt="Keberagaman Budaya Indonesia" 
+             class="absolute inset-0 w-full h-full object-cover" 
+             loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+            <h1 class="heading-font text-4xl md:text-6xl text-white drop-shadow-lg leading-tight">Keberagaman<br>Budaya Indonesia</h1>
+            <p class="text-white/90 mt-4 max-w-2xl text-lg md:text-xl">Menjelajahi kekayaan tradisi, seni, dan kearifan lokal yang membentang dari Sabang hingga Merauke.</p>
+        </div>
+    </header>
+
+    <main class="w-full max-w-7xl mx-auto px-4 py-16">
+        <h2 class="heading-font text-3xl md:text-4xl text-center mb-12 text-gray-900">Jelajahi Warisan Kita</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <button type="button" class="card-wrapper aspect-[4/5] animate-card" style="animation-delay:0.1s" aria-label="Tarian Tradisional">
+                <div class="card-inner w-full h-full relative">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1517524959141-8eb9095bb6f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tari Bali" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-white font-bold text-2xl tracking-wide">Tari Tradisional</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-amber-50 flex items-center justify-center p-8 text-center border border-amber-200">
+                        <p class="text-lg leading-relaxed text-amber-900">Setiap daerah memiliki tarian khas dengan makna filosofis yang mendalam, mulai dari penyambutan tamu hingga ritual sakral.</p>
+                    </div>
+                </div>
+            </button> 
+
+            <button type="button" class="card-wrapper aspect-[4/5] animate-card" style="animation-delay:0.2s" aria-label="Batik">
+                <div class="card-inner w-full h-full relative">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1604908177521-177b9fb29f63?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kain Batik" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-white font-bold text-2xl tracking-wide">Kain Nusantara</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-amber-50 flex items-center justify-center p-8 text-center border border-amber-200">
+                        <p class="text-lg leading-relaxed text-amber-900">Batik, Tenun, dan Songket bukan sekadar pakaian, melainkan mahakarya seni yang telah diakui oleh dunia (UNESCO).</p>
+                    </div>
+                </div>
+            </button> 
+
+            <button type="button" class="card-wrapper aspect-[4/5] animate-card" style="animation-delay:0.3s" aria-label="Makanan Tradisional">
+                <div class="card-inner w-full h-full relative">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1596683720373-d68a57342fb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kuliner Nusantara" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-white font-bold text-2xl tracking-wide">Kuliner Khas</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-amber-50 flex items-center justify-center p-8 text-center border border-amber-200">
+                        <p class="text-lg leading-relaxed text-amber-900">Kekayaan rempah-rempah nusantara melahirkan cita rasa masakan yang ikonis, seperti Rendang yang diakui sebagai salah satu makanan terenak di dunia.</p>
+                    </div>
+                </div>
+            </button> 
+
+            <button type="button" class="card-wrapper aspect-[4/5] animate-card" style="animation-delay:0.4s" aria-label="Rumah Adat">
+                <div class="card-inner w-full h-full relative">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1628172905206-8b43fb4e3658?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rumah Adat" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-white font-bold text-2xl tracking-wide">Rumah Adat</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-amber-50 flex items-center justify-center p-8 text-center border border-amber-200">
+                        <p class="text-lg leading-relaxed text-amber-900">Arsitektur tradisional yang disesuaikan dengan kondisi alam dan filosofi hidup masyarakat setempat, seperti Rumah Gadang dan Tongkonan.</p>
+                    </div>
+                </div>
+            </button> 
+
+            <button type="button" class="card-wrapper aspect-[4/5] animate-card" style="animation-delay:0.5s" aria-label="Musik Tradisional">
+                <div class="card-inner w-full h-full relative">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1616712398410-b99db10c41fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alat Musik" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-white font-bold text-2xl tracking-wide">Seni Musik</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-amber-50 flex items-center justify-center p-8 text-center border border-amber-200">
+                        <p class="text-lg leading-relaxed text-amber-900">Instrumen unik seperti Angklung, Sasando, dan Gamelan menciptakan harmoni nada yang merepresentasikan jiwa masyarakat Indonesia.</p>
+                    </div>
+                </div>
+            </button> 
+
+            <button type="button" class="card-wrapper aspect-[4/5] animate-card" style="animation-delay:0.6s" aria-label="Upacara Adat">
+                <div class="card-inner w-full h-full relative">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1536768393961-8b2b64b150c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Upacara Adat" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-white font-bold text-2xl tracking-wide">Upacara Adat</h3>
+                        </div>
+                    </div>
+                    <div class="card-back bg-amber-50 flex items-center justify-center p-8 text-center border border-amber-200">
+                        <p class="text-lg leading-relaxed text-amber-900">Tradisi dan ritual turun-temurun yang masih dijaga kelestariannya sebagai wujud syukur dan penghormatan kepada leluhur.</p>
+                    </div>
+                </div>
+            </button>
+            
+        </div>
+    </main>
+
+    <footer class="w-full py-8 text-center border-t border-gray-200 mt-10">
+        <p class="text-sm text-gray-500 font-medium">&copy; 2026 Budaya Indonesia. Dirancang untuk semua perangkat.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.card-wrapper').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('is-flipped');
+            });
+        });
+    </script>
+</body>
+</html>
